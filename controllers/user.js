@@ -53,9 +53,12 @@ const usersPatch = (req,res = response) =>{
 
 const usersDelete = async(req,res = response) =>{
     const { id } = req.params;
-    //Physical method (Not do it)
-    //const user = await User.findByIdAndDelete(id);
     const user = await User.findByIdAndUpdate(id,{state: false});
+    // const userAuth = req.user;
+    // const uid = req.uid;
+    // Physical method (Not do it)
+    // const user = await User.findByIdAndDelete(id);
+    
 
     res.json(user);
 }
